@@ -1,0 +1,9 @@
+$.ajax(`/api/books/${isbn}`).done(function(book) {
+    $("#book-container").append(`
+      <img src="${book.cover}">
+      <h1>${book.title}</h1>
+      <small>${book.subtitle}</small>
+      <p>${book.description}</p>
+      <ul>${book.authors.map(a => `<li>${a}</li>`).join("")}</ul>
+    `);
+  });
